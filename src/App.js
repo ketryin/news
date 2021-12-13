@@ -1,6 +1,6 @@
-import SearchBar from "./components/SearchBar";
 import './fonts.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import MainPage from "./views/MainPage";
 
 const theme = createTheme({
   typography: {
@@ -13,7 +13,7 @@ const theme = createTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <SearchBar/>
+      <MainPage />
     </ThemeProvider>
   );
 }
