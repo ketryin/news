@@ -1,4 +1,4 @@
-import { TextField } from "@material-ui/core";
+import { TextField  } from "@mui/material";
 import './SearchBar.scss';
 
 const SearchBar = (props) => {
@@ -13,6 +13,7 @@ const SearchBar = (props) => {
             type='search'
             value={value}
             onChange={onChange}
+            
         />
     </>;
 };

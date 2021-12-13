@@ -1,6 +1,6 @@
 import SearchBar from "./components/SearchBar";
 import './fonts.css';
-import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   typography: {

@@ -1,0 +1,23 @@
+.search-bar {
+  padding-left: 60px;
+  width: 600px;
+}
+
+.search-bar:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto 20px;
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+}
+
+.search-bar-label {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.25;
+}
+/*# sourceMappingURL=SearchBar.css.map */
