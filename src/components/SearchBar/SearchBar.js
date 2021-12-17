@@ -12,7 +12,7 @@ const SearchBar = (props) => {
               <Search sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
               <TextField 
                   className='search-bar'
-                  label="The most successful IT companies in 2020" 
+                  label="Search" 
                   variant="standard"
                   value={value}
                   onChange={e => onChange(e.target.value)}

@@ -1,6 +1,8 @@
-import './fonts.css';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { BrowserRouter as Router, useRoutes } from 'react-router-dom';
 import MainPage from "./views/MainPage";
+import NewsPage from './views/NewsPage';
+import './fonts.css';
 
 const theme = createTheme({
   typography: {
@@ -10,10 +12,19 @@ const theme = createTheme({
     ].join(','),
   },});
 
+function AppRoutes() {
+  return useRoutes([
+    { path : '/', element : <MainPage /> },
+    { path : '/:id', element : <NewsPage /> }
+  ]);
+}
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <MainPage />
+      <Router>
+        <AppRoutes />
+      </Router>
     </ThemeProvider>
   );
 }
