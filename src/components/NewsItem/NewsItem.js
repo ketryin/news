@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router";
 import { Link } from 'react-router-dom';
+import createMarker from 'react-content-marker';
 import moment from 'moment';
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
 import './NewsItem.scss';
@@ -10,9 +11,14 @@ const NewsItem = ({id, keyword, imageUrl, datePublished, title, summary}) => {
 
     const location = useLocation();
 
-    console.log(moment(datePublished).format('MMMM Do, YYYY'));
+    const parsers = [
+        {
+            rule: new RegExp(keyword, 'i'),
+            tag: x => <mark>{x}</mark>,
+        }
+    ];
 
-    
+    const Marker = createMarker(parsers);
 
     return (
         <Grid item xs={12} md={4}>
@@ -34,10 +40,10 @@ const NewsItem = ({id, keyword, imageUrl, datePublished, title, summary}) => {
                         </Typography>
                     </div>
                     <Typography variant="h5" sx={{ marginBottom: '20px', marginTop: '24px'}}>
-                        {title}
+                        <Marker>{title}</Marker>
                     </Typography>
                     <Typography variant="subtitle1">
-                        {summary.substr(0, 97)+"..."}
+                        <Marker>{summary.substr(0, 97)+"..."}</Marker>
                     </Typography>
                 </CardContent>
                 <CardActions>
