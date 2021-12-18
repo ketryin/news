@@ -1,11 +1,7 @@
 import axios from "axios";
 
-const LIMIT = 6;
+const LIMIT = 30;
 
-function getArticles() {
-    return axios.get(`https://api.spaceflightnewsapi.net/v3/articles?_limit=${LIMIT}`)
-        .then((response) => response.data);
-}
 
 function getArticleById(id) {
     return axios.get(`https://api.spaceflightnewsapi.net/v3/articles/${id}`)
@@ -17,5 +13,4 @@ function getArticleByKeyWord(keyWord) {
         .then((response) => response.data);
 }
 
-
-export { getArticles, getArticleById, getArticleByKeyWord }
+export { getArticleById, getArticleByKeyWord }

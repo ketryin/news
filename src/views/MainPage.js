@@ -3,6 +3,8 @@ import { getArticleByKeyWord } from '../api/news-api';
 import SearchBar from "../components/SearchBar";
 import ListNews from '../components/ListNews'
 import useDebounce from '../hooks/useDebounce';
+import Container from '../components/Container/Container';
+import Results from "../components/Results";
 
 function MainPage() {
 
@@ -21,8 +23,13 @@ function MainPage() {
 
     return (
         <>
-            <SearchBar onChange={setKeyword} value={keyword} />
-            <ListNews news={news}/>
+            <Container>
+                <SearchBar onChange={setKeyword} value={keyword} />
+                {news.length > 0 && (
+                    <Results count={news.length}/>
+                )}
+                <ListNews news={news} keyword={keyword}/>
+            </Container>
         </>
     );
 }
